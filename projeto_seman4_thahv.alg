@@ -62,6 +62,9 @@ repita
       Escreval ("Total: R$ ",valorReal:1:2)
       Escreval("")
 
+   outrocaso
+      Escreval ("Opção inválida! Por favor, digite uma opção válida.")
+
    fimescolha
 
 ate menu = "5"
