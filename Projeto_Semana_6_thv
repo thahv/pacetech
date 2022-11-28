@@ -1,0 +1,86 @@
+package Projeto_Semana_6;
+
+
+//FIQUEI CONFUSA COM OS MENUS & ERROS! :(
+
+import java.util.Scanner;
+        
+public class Main {
+
+   Scanner leia = new Scanner (System.in);
+           
+    public static void main(String[] args) {
+        
+  int menu1 = 0, menu2 = 0, menu3 = 0;
+  double tempCel = 0d, tempFah = 0d;
+  double real = 0d, dolar = 0d, cotacao = 0d;
+          
+    System.out.print("MENU:");
+    System.out.print("");
+    System.out.print("Converter");
+    System.out.print("1- Temperatura");
+    System.out.print("2- Moedas");
+    System.out.print("3- Sair");
+    menu = leia.nextInt ();
+    
+    
+    //TEMPERATURA
+    switch (menu) {   
+        case 1:
+            System.out.println("Converter:");
+            System.out.print("1- Celsius para Fahrenheit");
+            System.out.print("2- Fahrenheit para Celsius");
+            System.out.print("3- Voltar para menu principal");
+    
+        switch (menu1) { 
+            case 1:
+                System.out.println("Informe a temperatura em Celsius:");
+                tempCel = leia.nextDouble();
+                tempFah = temp (tempCel * 1.8) + 32;  // COMO LIMITAR AS CASAS DECIMAIS? 1:2? ou ja esta como inteiro?
+                System.out.println("A temperatura é"+ tempFah + "° Fahrenheit.");     
+        }
+            case 2:
+                System.out.println("Informe a temperatura em Fahrenheit:");
+                tempFah = leia.nextDouble();
+                tempCel = temp (tempFah - 32) / 1.8;   // COMO LIMITAR AS CASAS DECIMAIS? 1:2? ou ja esta como inteiro?
+                System.out.println("A temperatura é"+ tempCel + "° Celsius.");
+                           
+    }
+    while (menu1 != 3); 
+    break; 
+
+    //MOEDAS
+    switch (menu2) {
+        case 2:
+            System.out.println("Converter:");
+            System.out.print("1- Real para Dolar");
+            System.out.print("2- Dolar para Real");
+            System.out.print("3- Voltar para menu principal");
+            
+         switch (menu2) { 
+            case 1:
+                System.out.println("Informe a cotação do Dolar:");
+                cotacao = leia.nextDouble();
+                System.out.println("Informe o valor em Real:");
+                real = leia.nextDouble();
+                dolar = real / cotacao;  // COMO LIMITAR AS CASAS DECIMAIS? 1:2? ou ja esta como inteiro?
+                System.out.println("Total: $" + dolar);     
+        }    
+            case 2:
+            System.out.println("Informe a cotação do Dolar:");
+            cotacao = leia.nextDouble();
+            System.out.println("Informe o valor em Dolar:");
+            dolar = leia.nextDouble();
+            real = dolar * cotacao;  // COMO LIMITAR AS CASAS DECIMAIS? 1:2? ou ja esta como inteiro?
+            System.out.println("Total: R$" + real);     
+    while (menu2 != 3); 
+    break;    
+    }
+    
+//SAIR
+switch (menu3) {
+    System.out.println("Até a próxima!");
+    
+    
+    
+
