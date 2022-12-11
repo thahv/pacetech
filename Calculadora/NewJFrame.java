@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Calculadora;
 
 public class NewJFrame extends javax.swing.JFrame {
@@ -10,10 +6,8 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
     }
 
-    Double valor1, valor2;
-    String operacao, multiplicacao, divisao, soma, subtracao;
-    
-              
+    float valor1, valor2, resultado;
+    String operacao;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -252,6 +246,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         Resultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Resultado.setForeground(new java.awt.Color(51, 0, 204));
+        Resultado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Resultado.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         Resultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,11 +340,10 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton0, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButtonPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButtonSoma, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonSoma, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton0, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jButtonIgual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -368,135 +362,141 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+    private void jButtonDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivisaoActionPerformed
         // BOTAO /
 
-        valor1 = Double.parseDouble(Resultado.getText());
-        Resultado.setText("");
-        operacao = "divisao";
+        this.valor1 = Float.parseFloat(Resultado.getText());
+        this.Resultado.setText("");
+        this.operacao = "/";
 
-    }//GEN-LAST:event_jButton27ActionPerformed
+    }//GEN-LAST:event_jButtonDivisaoActionPerformed
 
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+    private void jButtonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCActionPerformed
         // BOTAO C
-        Resultado.setText(" ");
+        this.Resultado.setText(" ");
 
-    }//GEN-LAST:event_jButton26ActionPerformed
+    }//GEN-LAST:event_jButtonCActionPerformed
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void jButtonOnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOnActionPerformed
         // BOTAO ON
-        Resultado.setText(" ");
+        this.Resultado.setText(" ");
 
-    }//GEN-LAST:event_jButton25ActionPerformed
+    }//GEN-LAST:event_jButtonOnActionPerformed
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+    private void jButtonSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubtracaoActionPerformed
         // BOTAO -
 
-        valor1 = Double.parseDouble(Resultado.getText());
-        Resultado.setText("");
-        operacao = "subtracao";
+        this.valor1 = Float.parseFloat(Resultado.getText());
+        this.Resultado.setText("");
+        this.operacao = "-";
 
-    }//GEN-LAST:event_jButton24ActionPerformed
+    }//GEN-LAST:event_jButtonSubtracaoActionPerformed
 
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // BOTAO 1
-        Resultado.setText(Resultado.getText() + "1");
-    }//GEN-LAST:event_jButton23ActionPerformed
+        this.Resultado.setText(Resultado.getText() + "1");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+    private void jButtonMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicacaoActionPerformed
         // BOTAO *
 
-        valor1 = Double.parseDouble(Resultado.getText());
-        Resultado.setText("");
-        operacao = "multiplicacao";
+        this.valor1 = Float.parseFloat(Resultado.getText());
+        this.Resultado.setText("");
+        this.operacao = "*";
 
-    }//GEN-LAST:event_jButton21ActionPerformed
+    }//GEN-LAST:event_jButtonMultiplicacaoActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void jButtonSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSomaActionPerformed
         // BOTAO +
 
-        valor1 = Double.parseDouble(Resultado.getText());
-        Resultado.setText("");
-        operacao = "soma";
-    }//GEN-LAST:event_jButton20ActionPerformed
+        this.valor1 = Float.parseFloat(Resultado.getText());
+        this.Resultado.setText("");
+        this.operacao = "+";
+    }//GEN-LAST:event_jButtonSomaActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // BOTAO 3
-        Resultado.setText(Resultado.getText() + "3");
+        this.Resultado.setText(this.Resultado.getText() + "3");
 
-    }//GEN-LAST:event_jButton14ActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void jButtonPontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPontoActionPerformed
         // BOTAO .
 
-        Resultado.setText(Resultado.getText() + ".");
-    }//GEN-LAST:event_jButton10ActionPerformed
+        this.Resultado.setText(this.Resultado.getText() + ".");
+    }//GEN-LAST:event_jButtonPontoActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
         // BOTAO 0
 
-        Resultado.setText(Resultado.getText() + "0");
+        this.Resultado.setText(this.Resultado.getText() + "0");
 
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_jButton0ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // BOTAO 2
 
-        Resultado.setText(Resultado.getText() + "2");
-    }//GEN-LAST:event_jButton19ActionPerformed
+        this.Resultado.setText(this.Resultado.getText() + "2");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // BOTAO 4
-        Resultado.setText(Resultado.getText() + "4");
+        this.Resultado.setText(this.Resultado.getText() + "4");
 
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // BOTAO 5
-        Resultado.setText(Resultado.getText() + "5");
+        this.Resultado.setText(this.Resultado.getText() + "5");
 
-    }//GEN-LAST:event_jButton15ActionPerformed
+    }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // BOTAO 6
-        Resultado.setText(Resultado.getText() + "6"
+        this.Resultado.setText(this.Resultado.getText() + "6"
                 + "");
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // BOTAO 7
-        Resultado.setText(Resultado.getText() + "7");
+        this.Resultado.setText(this.Resultado.getText() + "7");
 
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // BOTAO 8
-        Resultado.setText(Resultado.getText() + "8");
+        this.Resultado.setText(this.Resultado.getText() + "8");
 
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // BOTAO 9
-        Resultado.setText(Resultado.getText() + "9");
+        this.Resultado.setText(this.Resultado.getText() + "9");
 
-    }//GEN-LAST:event_jButton18ActionPerformed
+    }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+    private void jButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIgualActionPerformed
         // BOTAO =
 
-        valor2 = Double.parseDouble(Resultado.getText());
+        this.valor2 = Float.parseFloat(Resultado.getText());
 
-        if (operacao == soma) {
-            Resultado.setText(String.valueOf(valor1 + valor2));
-        } else if (operacao == subtracao) {
-            Resultado.setText(String.valueOf(valor1 - valor2));
-        } else if (operacao == multiplicacao) {
-            Resultado.setText(String.valueOf(valor1 * valor2));
-        } else if (operacao == divisao) {
-            Resultado.setText(String.valueOf(valor1 / valor2));
+        switch (this.operacao) {
+            case "+":
+                this.Resultado.setText.toString(this.valor1 + this.valor2);
+            case "-":
+                this.Resultado.setText.toString(this.valor1 - this.valor2);
+            case "*":
+                this.Resultado.setText.toString(this.valor1 * this.valor2);
+            case "/":
+                this.Resultado.setText.toString(this.valor1 / this.valor2);
         }
 
-    }//GEN-LAST:event_jButton22ActionPerformed
+    }//GEN-LAST:event_jButtonIgualActionPerformed
+
+    private void ResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultadoActionPerformed
+        // Resultado:
+        this.Resultado.getText();
+    }//GEN-LAST:event_ResultadoActionPerformed
 
     /**
      * @param args the command line arguments
